@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-n = int(input("Введите натуральное число n: "))
-print(f"Натуральные делители числа {n}:")
-c = 0
+print("Варианты покупки:")
 
-for i in range(1, n + 1):
-    if n % i == 0:
-        print(i, end=" ")
-        c += 1
+for bulls in range(11):
+    for cows in range(21):
+        calves = 100 - bulls - cows
 
-print(f"\nКоличество делителей: {c}")
+        if calves >= 0:
+            price = (bulls * 10) + (cows * 5) + (calves * 0.5)
+
+            if price == 100:
+                print(f"Быков: {bulls}, Коров: {cows}, Телят: {calves}")
